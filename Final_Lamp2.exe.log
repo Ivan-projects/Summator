@@ -1,0 +1,58 @@
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\summator3000\SUMMATOR\Final_Lamp2.exe, файл: c:\program files (x86)\codeblocks\mingw\include\txlib.h, строка: 13628, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2021-07-19 01:45:49 +0400], Instance: 0x004FE39C (32-bit), Flags: CMdRe0, Thread: 0x1A28 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00422E86 in E:\summator3000\SUMMATOR\Final_Lamp2.exe: txBitBlt() at c:/program files (x86)/codeblocks/mingw/include/txlib.h (13628)
+
+# 1 0x0042CCC3 in E:\summator3000\SUMMATOR\Final_Lamp2.exe: main() at E:/summator3000/SUMMATOR/Final_Lamp2.cpp (106):
+
+    104:         }
+    105: 
+=>  106:     txBitBlt  (txDC(), 0, 0, 700, 600, Playing_field_View, 0, 0);
+    107:     txDeleteDC (Playing_field_View);
+    108:     return 0;
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at c:\program files (x86)\codeblocks\mingw\include\txlib.h (13628):
+
+  13626:     {
+  13627: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13628: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13629: 
+  13630: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\summator3000\SUMMATOR\Final_Lamp2.cpp (106):
+
+    104:         }
+    105: 
+=>  106:     txBitBlt  (txDC(), 0, 0, 700, 600, Playing_field_View, 0, 0);
+    107:     txDeleteDC (Playing_field_View);
+    108:     return 0;
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-07-19 01:45:49 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\program files (x86)\codeblocks\mingw\include\txlib.h
+Compiled:	Mar  1 2022 19:16:38, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Mar 01 2022 19:16:42
+
+Run file:	E:\summator3000\SUMMATOR\Final_Lamp2.exe
+Directory:	E:\summator3000\SUMMATOR
+
+--------------------------------------------------
